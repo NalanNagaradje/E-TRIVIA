@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8">
+        <title>E-Trivia</title>
+        <link rel="stylesheet" href="E-Trivia.css">
+    </head>
+    
+    <body>
+        <div class="Selection">
+            <div class="Nom_du_site">
+                <h1>E-Trivia</h1>
+            </div>
+            <div class="Selection_Affiche" id="Selection_Affiche">
+                <h1>Affiche</h1>
+            </div>
+            <div class="Selection_Menu" id="Selection_Menu">
+                <h1>Menu du Crous</h1>
+            </div>
+        </div>
+        <div class="div_affiche" id="div_affiche">
+            <div class="colonnes_principales">
+                <div class="colonne_gauche" id="colonne_gauche"></div>
+                <div class="colonne_droite" id="colonne_droite"></div>
+            </div>
+            <div class="derniere_colonne" id="derniere_colonne"></div> <!-- Cette colonne sera la si le nombre d'affiche est impaire -->
+        </div>
+        <div class="div_menu" id="div_menu">
+            <h2>Menu du crous</h2>
+            <table>
+            <!---
+                <caption>
+                    Menu du Crous du (Mettre la date par code)
+                </caption>
+            -->
+                <tbody>
+                    <tr class="Cuisine du Monde" id="Cuisine du Monde">
+                        <th scope="row">Cuisine du monde</th>
+                        <td>Pates</td>
+                        <td>Couscous</td>
+                        <td>Saucisses</td>
+                    </tr>
+                </tbody>
+            </table>
+            <table>
+                <tbody>
+                    <tr id="Friterie">
+                        <th scope="row">Friterie</th>
+                        <td>Frites</td>
+                        <td>Steak</td>
+                    </tr>
+                </tbody>
+            </table>
+            <table>
+                <tbody>
+                    <tr id="Pizzeria">
+                        <th scope="row">Pizzeria</th>
+                        <td>Pizza Margarita</td>
+                        <td>Pizza Fermière</td>
+                    </tr>
+                </tbody>
+            </table>
+            <table>
+                <tbody>
+                    <tr id="Entrées">
+                        <th scope="row">Entrées</th>
+                        <td>Carottes</td>
+                        <td>Taboulé</td>
+                        <td>3</td>
+                        <td>4</td>
+                    </tr>
+                </tbody>
+            </table>
+            <table>
+                <tbody>
+                    <tr id="Dessert">
+                        <th scope="row">Dessert</th>
+                        <td>Carottes</td>
+                        <td>Taboulé</td>
+                        <td>3</td>
+                        <td>4</td>
+                        <td>5</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <script type="module" src="E-Trivia.js"></script>
+    </body>
+</html>

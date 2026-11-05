@@ -1,0 +1,141 @@
+body{
+  background-color: powderblue;
+}
+h1{
+  color: blue;
+  text-align: center;
+}
+p{
+  color: red;
+}
+
+.Selection{
+  display: flex;
+}
+
+.Nom_du_site{
+  width: 20%;
+}
+
+.Nom_du_site h1{
+  border : solid;
+  background-color: blueviolet;
+}
+
+.Selection_Affiche{
+  width: 40%;
+}
+
+.Selection_Affiche h1{
+  border : solid;
+  background-color: lightgreen;
+}
+
+.Selection_Menu{
+  width: 40%;
+}
+
+.Selection_Menu h1{
+  border : solid;
+  background-color: lightseagreen;
+}
+
+.div_affiche{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+}
+
+.colonnes_principales{
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  width: 100%;
+}
+
+.colonne_gauche{
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  padding: 0 0%;
+  row-gap: 10px;
+  column-gap: 1%;
+  justify-content: center;
+  width: 50%;
+  /*left: 0px;*/
+}
+
+.colonne_droite{
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  padding: 0 0%;
+  row-gap: 10px;
+  column-gap: 1%;
+  justify-content: center;
+  width: 50%;
+  margin-right: 0%;
+}
+
+.derniere_colonne{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 100%;
+}
+
+.derniere_colonne div{
+  width: 50%;
+}
+
+.affiche{
+    background-color: lightcoral;
+    border-radius: 999px;
+    text-align: center;
+    width: 99%;
+}
+
+[hidden] {
+    display: none !important;
+}
+
+table {
+  border-collapse: collapse;
+  border: 2px solid rgb(140 140 140);
+  border-top: none;
+  border-bottom: none;
+  font-family: sans-serif;
+  font-size: 0.8rem;
+  letter-spacing: 1px;
+  width: 100%;
+  table-layout: fixed;
+}
+
+.div_menu > table:first-of-type {
+  border-top: 2px solid rgb(140 140 140);
+  
+}
+
+.div_menu > table:last-of-type {
+  border-bottom: 2px solid rgb(140 140 140);
+}
+
+table th:first-of-type{
+  width : 10%;
+}
+
+caption {
+  caption-side: bottom;
+  padding: 10px;
+  font-weight: bold;
+}
+
+
+th, td {
+  border: 1px solid rgb(160 160 160);
+  border-top: none;
+  padding: 8px 10px;
+  text-align: center;
+}
