@@ -1,31 +1,56 @@
 import {Affiche} from "./Affiche.js";
+import {Plat} from "./Plat.js";
 
 
 const div_selection_affiche = document.getElementById("Selection_Affiche");
 const div_selection_menu = document.getElementById("Selection_Menu");
+
+div_selection_affiche.addEventListener("click", () =>{
+    if (div_affiche.hidden == true){
+        console.log("Va montrer les affiches")
+        div_menu.hidden = true;
+        div_affiche.hidden = false;
+    }
+});
+div_selection_menu.addEventListener("click", () =>{
+    if (div_menu.hidden == true){
+        console.log("Va montrer le menu")
+        div_affiche.hidden = true;
+        div_menu.hidden = false;
+    }
+});
+
 const div_affiche = document.getElementById("div_affiche");
 const div_menu = document.getElementById("div_menu");
 const colonne_gauche_div = document.getElementById("colonne_gauche");
 const colonne_droite_div = document.getElementById("colonne_droite");
 const derniere_colonne_div = document.getElementById("derniere_colonne");
+const table_row_cuisine_du_monde = document.getElementById("Cuisine du Monde");
+const table_row_friterie = document.getElementById("Friterie");
+const table_row_pizzeria = document.getElementById("Pizzeria");
+const table_row_entrees = document.getElementById("Entrées");
+const table_row_desserts = document.getElementById("Desserts");
 let tableau_affiche = [];
 let tableau_photo_affiche = [];
+let tableau_plat=[];
 
 
 main();
 
 function main(){
-    construire_tableau();
+    remplir_affiches();
     contruire_affiches();
-    console.log(colonne_gauche_div);
-    console.log(colonne_droite_div);
-    console.log(derniere_colonne_div);
-    console.log(div_affiche);
-    console.log(div_menu);
     div_affiche.hidden = true
+    console.log(table_row_cuisine_du_monde)
+    console.log(table_row_friterie)
+    console.log(table_row_pizzeria)
+    console.log(table_row_entrees)
+    console.log(table_row_desserts)
+    remplir_menu()
+    construire_menu()
 }
 
-function construire_tableau(){
+function remplir_affiches(){
     let nouvelle_affiche = new Affiche("Bonjour", "Je suis une affiche", "Lien vers la photo")
     tableau_affiche.push(nouvelle_affiche);
     let nouvelle_affiche2 = new Affiche("Salut", "Je suis la seconde affiche créé par javascript", "Lien vers la photo")
@@ -60,18 +85,14 @@ function contruire_affiches(){
     }
 }
 
-div_selection_affiche.addEventListener("click", () =>{
-    if (div_affiche.hidden == true){
-        console.log("Va montrer les affiches")
-        div_menu.hidden = true;
-        div_affiche.hidden = false;
-    }
-});
+function remplir_menu(){
+    let nouveau_plat=new Plat(table_row_cuisine_du_monde, "Poisson")
+    tableau_plat.push(nouveau_plat);
+}
 
-div_selection_menu.addEventListener("click", () =>{
-    if (div_menu.hidden == true){
-        console.log("Va montrer le menu")
-        div_affiche.hidden = true;
-        div_menu.hidden = false;
+function construire_menu(){
+    for (let x=0; x < tableau_plat.length; x=x+1){
+        console.log("Test")
+        tableau_plat[x].get_table_row().appendChild(tableau_plat[x].get_plat())
     }
-});
+}
