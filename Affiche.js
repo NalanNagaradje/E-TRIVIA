@@ -9,6 +9,7 @@ export class Affiche{
         this.p = document.createElement("p");
 
         this.div.classList.add("affiche");
+        this.div.style.backgroundImage = 'url("./Image a mettre.jpg")';
         this.h2.innerText = Titre;
         this.p.innerText = Texte;
 

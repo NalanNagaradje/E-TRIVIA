@@ -91,7 +91,7 @@ p{
 }
 
 .affiche{
-    background-color: lightcoral;
+    background-size : cover;
     border-radius: 999px;
     text-align: center;
     width: 99%;

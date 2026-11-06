@@ -25,13 +25,14 @@ const div_menu = document.getElementById("div_menu");
 const colonne_gauche_div = document.getElementById("colonne_gauche");
 const colonne_droite_div = document.getElementById("colonne_droite");
 const derniere_colonne_div = document.getElementById("derniere_colonne");
+let tableau_affiche = [];
+
 const table_row_cuisine_du_monde = document.getElementById("Cuisine du Monde");
 const table_row_friterie = document.getElementById("Friterie");
 const table_row_pizzeria = document.getElementById("Pizzeria");
 const table_row_entrees = document.getElementById("Entrées");
 const table_row_desserts = document.getElementById("Desserts");
-let tableau_affiche = [];
-let tableau_photo_affiche = [];
+const caption_menu = document.getElementById("Caption Menu");
 let tableau_plat=[];
 
 
@@ -40,12 +41,13 @@ main();
 function main(){
     remplir_affiches();
     contruire_affiches();
-    div_affiche.hidden = true
+    div_menu.hidden = true
     console.log(table_row_cuisine_du_monde)
     console.log(table_row_friterie)
     console.log(table_row_pizzeria)
     console.log(table_row_entrees)
     console.log(table_row_desserts)
+    console.log(caption_menu)
     remplir_menu()
     construire_menu()
 }
@@ -92,7 +94,8 @@ function remplir_menu(){
 
 function construire_menu(){
     for (let x=0; x < tableau_plat.length; x=x+1){
-        console.log("Test")
-        tableau_plat[x].get_table_row().appendChild(tableau_plat[x].get_plat())
+        tableau_plat[x].get_table_row().appendChild(tableau_plat[x].get_plat());
     }
+    let now = new Date();
+    caption_menu.innerText="Menu du Crous du "+now.getDate()+"/"+now.getMonth()+"/"+now.getFullYear();
 }
