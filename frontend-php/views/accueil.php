@@ -9,8 +9,8 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>E-Ttrivia — Accueil</title>
-    <link rel="stylesheet" href="/asses/style.css">
+    <title>E-Trivia — Accueil</title>
+    <link rel="stylesheet" href="/assets/style.css">
   </head>
 
   <body>
@@ -23,7 +23,7 @@
         <a class="nav-link" href="?action=menu">Menu du RU</a>
         <a class="nav-link" href="?action=categories">Catégories</a>
         <?php if ($auth): ?>
-          <span class="topsecret"> <?= e($auth['role'] === 'admin' ? 'ADMIN' : $auth['club_name']) ?></span>
+          <span class="user-badge"> <?= e($auth['role'] === 'admin' ? 'ADMIN' : $auth['club_name']) ?></span>
           <form method="post" action="/" style="display:inline;">
             <input type="hidden" name="action" value="deconnexion">
             <button type="submit" class="nav-link">Déconnexion</button>
@@ -34,24 +34,22 @@
       </div>
     </nav>
 
-    <!-- NOM SECTION -->
-    <section class="nom-section">
-      <div class="nom-section-content">
+    <!-- EN-TÊTE -->
+    <section class="page-header">
+      <div class="page-header-content">
         <a href="?action=accueil" style="text-decoration: none;">
-          <div class="logo-text">E-Trivia</div>
+          <div class="header-logo">E-Trivia</div>
         </a>
-        <div class="woohp-sub">MENU DU RU & CLUBS DE L'UNIVERSITÉ</div>
-        <div class="woohp-desc">Sorbonne Paris Nord · Villetaneuse</div>
-        <div style="display: flex; gap: 20px; justify-content: center; margin-top: 40px; flex-wrap: wrap;">
-          <a href="?action=menu" class="execute-btn" style="text-decoration: none; padding: 15px 35px; font-size: 1.2rem;">
+        <div class="header-title">MENU DU RU & CLUBS DE L'UNIVERSITÉ</div>
+        <div class="header-subtitle">Sorbonne Paris Nord · Villetaneuse</div>
+        <div class="header-actions">
+          <a href="?action=menu" class="btn btn-large">
             VOIR LE MENU
           </a>
-          <a href="?action=liste" class="execute-btn" style="text-decoration: none; padding: 15px 35px; font-size: 1.2rem; background: linear-gradient(135deg, #ff9800, #f57c00);">
+          <a href="?action=liste" class="btn btn-large">
             VOIR LES CLUBS
           </a>
         </div>
-        <div style="margin-top: 60px;"></div>
-        <div class="scroll-hint">▼ SCROLL POUR CONTINUER ▼</div>
       </div>
     </section>
 
@@ -62,27 +60,27 @@
     </div>
 
     <!-- PETITE SECTION D'INFORMATION -->
-    <div class="versailles-block" style="padding: 60px 20px;">
-      <div class="versailles-text">
-        <h2> FINI LA QUEUE <span style="color:var(--gold)">POUR RIEN</span></h2>
+    <div class="info-section">
+      <div class="info-text">
+        <h2> FINI LA QUEUE <span>POUR RIEN</span></h2>
         <p>La file d'attente du restaurant universitaire peut durer 20 à 30 minutes. Consultez le menu du jour depuis votre téléphone et décidez avant de partir.</p>
         <div class="badge-row">
-          <span class="badge badge-gold">⏱ Jusqu'à 10 h gagnées par mois</span>
-          <span class="badge badge-pink"> Menu mis à jour chaque jour</span>
+          <span class="badge">⏱ Jusqu'à 10 h gagnées par mois</span>
+          <span class="badge"> Menu mis à jour chaque jour</span>
         </div>
       </div>
-      <div class="versailles-text">
-        <h2> DES CLUBS <span style="color:var(--gold)">À DÉCOUVRIR</span></h2>
+      <div class="info-text">
+        <h2> DES CLUBS <span>À DÉCOUVRIR</span></h2>
         <p>Chaque association présente sa bannière, sa description, ses événements et ses moyens de contact. Trouvez celle qui vous ressemble et engagez-vous dans la vie du campus.</p>
         <div class="badge-row">
-          <span class="badge badge-gold"> <?= (int)$nb_clubs ?> clubs et associations</span>
-          <span class="badge badge-pink"> <?= (int)$nb_events ?> événements à venir</span>
+          <span class="badge"> <?= (int)$nb_clubs ?> clubs et associations</span>
+          <span class="badge"> <?= (int)$nb_events ?> événements à venir</span>
         </div>
       </div>
     </div>
 
     <footer>
-      <p>E-Trivia — Projet étudiant · Sorbonne Paris Nord · <span> MENU & CLUBS</span> · Menus fournis par <a href="https://croustillant.menu" style="color:var(--primary);">CROUStillant</a></p>
+      <p>E-Trivia — Projet étudiant · Sorbonne Paris Nord · <span> MENU & CLUBS</span> · Menus fournis par <a href="https://croustillant.menu">CROUStillant</a></p>
     </footer>
   </body>
 </html>

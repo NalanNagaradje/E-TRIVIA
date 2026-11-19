@@ -22,7 +22,7 @@
         <a class="nav-link" href="?action=menu">Menu du RU</a>
         <a class="nav-link" href="?action=categories">Catégories</a>
         <?php if ($auth): ?>
-          <span class="topsecret"> <?= e($auth['role'] === 'admin' ? 'ADMIN' : $auth['club_name']) ?></span>
+          <span class="user-badge"> <?= e($auth['role'] === 'admin' ? 'ADMIN' : $auth['club_name']) ?></span>
           <form method="post" action="/" style="display:inline;">
             <input type="hidden" name="action" value="deconnexion">
             <button type="submit" class="nav-link">Déconnexion</button>
@@ -33,15 +33,14 @@
       </div>
     </nav>
 
-    <!-- NOM SECTION -->
-    <section class="nom-section">
-      <div class="nom-section-content">
+    <!-- EN-TÊTE -->
+    <section class="page-header">
+      <div class="page-header-content">
         <a href="?action=accueil" style="text-decoration: none;">
-          <div class="logo-text">E-Trivia</div>
+          <div class="header-logo">E-Trivia</div>
         </a>
-        <div class="woohp-sub">MENU DU RESTAURANT UNIVERSITAIRE</div>
-        <div class="woohp-desc">Consultez le menu avant de faire la queue</div>
-        <div class="scroll-hint">▼ SCROLL POUR CONTINUER ▼</div>
+        <div class="header-title">MENU DU RESTAURANT UNIVERSITAIRE</div>
+        <div class="header-subtitle">Consultez le menu avant de faire la queue</div>
       </div>
     </section>
 
@@ -50,18 +49,17 @@
 
       <!-- ========== AFFICHAGE DU MENU ========== -->
       <?php if ($menu_ok): ?>
-        <p style="text-align:center; color:rgba(255,255,255,0.6); margin-bottom: 30px;">Menu du <?= e(date('d/m/Y', strtotime($donnees['date']))) ?></p>
+        <p class="text-muted" style="margin-bottom: 30px;">Menu du <?= e(date('d/m/Y', strtotime($donnees['date']))) ?></p>
         <?php if (!empty($donnees['warning'])): ?>
           <div class="alert alert-warning"> <?= e($donnees['warning']) ?></div>
         <?php endif; ?>
-        <div class="agents-grid">
+        <div class="cards-grid">
           <?php foreach ($donnees['meals'] as $repas): ?>
-          <div class="agent-card">
-            <div class="agent-color-bar"></div>
-            <div class="agent-info">
-              <div class="agent-name" style="color:var(--text);"><?= e(mb_strtoupper($repas['name'])) ?></div>
+          <div class="card">
+            <div class="card-body">
+              <div class="card-title"><?= e(mb_strtoupper($repas['name'])) ?></div>
               <?php foreach ($repas['categories'] as $categorie): ?>
-                <div class="agent-role" style="margin-top: 14px;"><?= e($categorie['name']) ?></div>
+                <div class="card-subtitle" style="margin-top: 14px;"><?= e($categorie['name']) ?></div>
                 <ul style="padding-left: 20px; margin: 0;">
                   <?php foreach ($categorie['dishes'] as $plat): ?><li><?= e($plat) ?></li><?php endforeach; ?>
                 </ul>
@@ -75,24 +73,24 @@
       <?php endif; ?>
 
       <!-- ========== FORMULAIRES ========== -->
-      <div class="mission-panel">
+      <div class="form-panel">
         <h3> CHANGER DE JOUR</h3>
         <form method="get" action="/">
           <input type="hidden" name="action" value="menu">
           <div class="form-grid">
             <div class="form-group"><label>Date</label><input type="date" name="date" value="<?= e($date) ?>"></div>
-            <button type="submit" class="execute-btn"> AFFICHER</button>
+            <button type="submit" class="btn"> AFFICHER</button>
           </div>
         </form>
       </div>
 
-      <div class="mission-panel">
+      <div class="form-panel">
         <h3> CHOISIR UN RESTAURANT</h3>
         <form method="get" action="/">
           <input type="hidden" name="action" value="menu">
           <div class="form-grid">
             <div class="form-group"><label>Nom ou ville du restaurant</label><input type="text" name="q" value="<?= e($recherche) ?>" placeholder="Ex: Villetaneuse" required></div>
-            <button type="submit" class="execute-btn"> RECHERCHER</button>
+            <button type="submit" class="btn"> RECHERCHER</button>
           </div>
         </form>
 
@@ -109,7 +107,7 @@
                 <tr>
                   <td><?= e($resto['name']) ?></td>
                   <td><?= e($resto['address']) ?></td>
-                  <td><a href="?action=menu&amp;restaurant=<?= urlencode((string)$resto['code']) ?>" style="color:var(--gold);">Choisir</a></td>
+                  <td><a href="?action=menu&amp;restaurant=<?= urlencode((string)$resto['code']) ?>">Choisir</a></td>
                 </tr>
                 <?php endforeach; ?>
               </tbody>
@@ -120,7 +118,7 @@
     </div>
 
     <footer>
-      <p>E-Trivia — Projet étudiant · Sorbonne Paris Nord · <span> MENU & CLUBS</span> · Menus fournis par <a href="https://croustillant.menu" style="color:var(--primary);">CROUStillant</a></p>
+      <p>E-Trivia — Projet étudiant · Sorbonne Paris Nord · <span> MENU & CLUBS</span> · Menus fournis par <a href="https://croustillant.menu">CROUStillant</a></p>
     </footer>
   </body>
 </html>
