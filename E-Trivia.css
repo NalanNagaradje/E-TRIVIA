@@ -14,33 +14,37 @@ p{
 }
 
 .Nom_du_site{
-  width: 20%;
+  width : 4.5%;
+  aspect-ratio: 1 / 1;
 }
 
-.Nom_du_site h1{
-  border : solid;
-  background-color: blueviolet;
+.Nom_du_site img{
+  width : 100%;
+  height : auto;
+
 }
 
 .Selection_Affiche{
-  width: 40%;
-}
-
-.Selection_Affiche h1{
+  width: 47.5%;
+  height: 100%;
   border : solid;
   background-color: lightgreen;
+  container-type: inline-size;
 }
+
+/*.Selection_Affiche h1{}*/
 
 .Selection_Menu{
-  width: 40%;
-}
-
-.Selection_Menu h1{
+  width: 47.5%;
+  height: 100%;
   border : solid;
   background-color: lightseagreen;
 }
 
+/*.Selection_Menu h1{}*/
+
 .div_affiche{
+  margin-top: 1%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -111,6 +115,10 @@ table {
   letter-spacing: 1px;
   width: 100%;
   table-layout: fixed;
+}
+
+.div_menu {
+  margin-top: 1%;
 }
 
 .div_menu > table:first-of-type {

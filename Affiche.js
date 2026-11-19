@@ -9,7 +9,7 @@ export class Affiche{
         this.p = document.createElement("p");
 
         this.div.classList.add("affiche");
-        this.div.style.backgroundImage = 'url("./Image a mettre.jpg")';
+        this.div.style.backgroundImage = 'url("./Start Screen.jpg")';
         this.h2.innerText = Titre;
         this.p.innerText = Texte;
 
@@ -28,3 +28,11 @@ export class Affiche{
         return this.div;
     }
 }
+
+/*docker / build git
+	•	cahier des charges
+	•	guide utilisateur
+	•	plaquette promotionelle (visée utilisateur)
+	•	option :
+	◦	rapport "agile" du projet
+*/
