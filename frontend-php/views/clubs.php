@@ -72,6 +72,15 @@
       <!-- ========== DETAIL D'UN CLUB ========== -->
       <?php if ($action === 'detail'): ?>
         <?php if (is_array($donnees) && isset($donnees['id'])): $club = $donnees; $contact = $club['contact'] ?? []; ?>
+        
+        <?php $banniere = safe_url($club['banner_url'] ?? null); ?>
+        <?php if ($banniere): ?>
+          <div class="club-banner">
+            <img class="club-banner-bg" src="<?= e($banniere) ?>" alt="" aria-hidden="true">
+            <img class="club-banner-img" src="<?= e($banniere) ?>" alt="Bannière de <?= e($club['name']) ?>">
+          </div>
+        <?php endif; ?>
+        
         <div class="detail-card">
           <h3> <?= e($club['name']) ?></h3>
           <table class="detail-table">

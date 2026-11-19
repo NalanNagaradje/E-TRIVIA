@@ -484,6 +484,37 @@ a.tag{
   font-size: 1.2rem;
 }
 
+.club-banner{
+  position: relative;
+  display: flex;
+  justify-content: center;
+  height: clamp(200px, 40vw, 380px);
+  margin-top: 20px;
+  overflow: hidden;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  background: #101828;
+}
+
+/* Fond : la même image, agrandie et floutée, pour remplir les côtés */
+.club-banner-bg{
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: blur(24px) brightness(.6);
+  transform: scale(1.15);
+}
+
+/* Image nette : toujours entière, jamais recadrée */
+.club-banner-img{
+  position: relative;
+  max-width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
 .detail-table td:first-child{
   width: 180px;
   color: var(--muted);
