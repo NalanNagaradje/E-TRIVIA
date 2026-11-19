@@ -1,4 +1,4 @@
-# 🍽️ E-Trivia
+# E-Trivia
  
 > Plateforme web pour les étudiants de **Sorbonne Paris Nord** : consulter le **menu du Crous** avant de faire la queue, et découvrir les **clubs et associations** de l'université.
  
