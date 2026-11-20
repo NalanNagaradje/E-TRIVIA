@@ -40,7 +40,8 @@ git clone https://github.com/NalanNagaradje/E-TRIVIA.git
 cd E-TRIVIA
 docker compose up -d
 ```
- 
+Cliquez sur ce lien pour tester le site web : [http://localhost:8080](http://localhost:8080)
+
 ### ⛔ Arrêter le projet
  
 ```bash
